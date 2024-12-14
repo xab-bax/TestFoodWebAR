@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene
+      mindar-image="imageTargetSrc:https://raw.githubusercontent.com/xab-bax/TestFoodWebAR/main/Assets/foodTargets.mind;"
+      renderer="antialias: true; colorManagement: true; physicallyCorrectLights: true; precision: highp; maxAnisotropy: 16"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-assets>
+        <a-asset-item id="burger-model" src="https://raw.githubusercontent.com/xab-bax/TestFoodWebAR/main/Assets/Glb%20Models/burger.glb"></a-asset-item>
+        <a-asset-item id="noodle-model" src="https://raw.githubusercontent.com/xab-bax/TestFoodWebAR/main/Assets/Glb%20Models/noodles.glb"></a-asset-item>
+        <a-asset-item id="pasta-model" src="https://raw.githubusercontent.com/xab-bax/TestFoodWebAR/main/Assets/Glb%20Models/pasta.glb"></a-asset-item>
+        <a-asset-item id="pizza-model" src="https://raw.githubusercontent.com/xab-bax/TestFoodWebAR/main/Assets/Glb%20Models/pizza.glb"></a-asset-item>
+        <a-asset-item id="thali-model" src="https://raw.githubusercontent.com/xab-bax/TestFoodWebAR/main/Assets/Glb%20Models/thali%20(2).glb"></a-asset-item>
+      </a-assets>
+
+      <!-- Lighting -->
+      <a-light type="ambient" intensity="0.8"></a-light>
+      <a-light type="directional" intensity="1.5" position="1 1 0"></a-light>
+
+      <!-- Camera -->
+      <a-camera mindar-image-camera="maxVideoResolution: true"></a-camera>
+
+      <!-- Image Target 1 (Burger) -->
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          src="#burger-model"
+          position="0 0 0"
+          scale="0.2 0.2 0.2"
+          rotation="90 0 0"
+        ></a-gltf-model>
+      </a-entity>
+
+      <!-- Image Target 2 (noodle) -->
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model
+          src="#noodle-model"
+          position="0 0 0"
+          scale="4 4 4"
+          rotation="90 0 0"
+        ></a-gltf-model>
+      </a-entity>
+
+      <!-- Image Target 3 (Pasta Bowl) -->
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-gltf-model
+          src="#pasta-model"
+          position="0 0 0"
+          scale="0.7 0.7 0.7"
+          rotation="90 0 0"
+        ></a-gltf-model>
+      </a-entity>
+
+      <!-- Image Target 3 (Pizza) -->
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model
+          src="#pizza-model"
+          position="0 0 0"
+          scale="1.5 1.5 1.5"
+          rotation="90 0 0"
+        ></a-gltf-model>
+      </a-entity>
+
+      <!-- Image Target 3 (Thali) -->
+      <a-entity mindar-image-target="targetIndex: 4">
+        <a-gltf-model
+          src="#thali-model"
+          position="-0.2 0.8 0"
+          scale="25 25 25"
+          rotation="90 0 0"
+        ></a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
