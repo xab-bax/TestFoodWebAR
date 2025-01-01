@@ -11,6 +11,8 @@
       renderer="antialias: true; colorManagement: true; physicallyCorrectLights: true; precision: highp; maxAnisotropy: 16"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
+      look-controls="enabled: false"  <!-- Disable camera control interactions -->
+      touch-events="enabled: false"  <!-- Disable touch interactions -->
     >
       <a-assets>
         <a-asset-item id="burger-model" src="https://raw.githubusercontent.com/xab-bax/TestFoodWebAR/main/Assets/Glb%20Models/burger.glb"></a-asset-item>
@@ -25,7 +27,7 @@
       <a-light type="directional" intensity="1.5" position="1 1 0"></a-light>
 
       <!-- Camera -->
-      <a-camera mindar-image-camera="maxVideoResolution: true"></a-camera>
+      <a-camera mindar-image-camera="maxVideoResolution: true" look-controls="enabled: false"></a-camera>
 
       <!-- Image Target 1 (Burger) -->
       <a-entity mindar-image-target="targetIndex: 0">
